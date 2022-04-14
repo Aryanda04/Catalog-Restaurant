@@ -13,10 +13,10 @@ import ('../DATA.json').then(({default: jsonData}) => {
             <img class="post-item__thumbnail" src="${data['pictureId']}" alt="${data['name']}"">
             
             <div class="post-item__content">
-            <p class="post-item__date">${data['city']} Rating : <a href="#" class="post-item__date__author">${data['rating']}n</a>
+            <p class="post-item__city">${data['city']} <p class="post-item__rating">  Rating : ${data['rating']}n</p>
                         </p>
 
-                <h1 class="list_item_title"><a href="#">${data['name']}</a></h1>
+                <h1 class="list_item_title">${data['name']}</h1>
                 <div class="post-item__description">${data['description'].slice(0, 150)}...</div>
             </div>
         </div>
