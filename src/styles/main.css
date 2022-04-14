@@ -1,7 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    color: #424242;
+}
+
 img {
     display: block;
 }
 
+/* Navbar */
+
+
+.nav {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: sticky;
+}
+
+.nav__list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__item {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.nav__item:hover {
+    background-color: antiquewhite;
+}
+
+.nav a {
+    width: 100%;
+    display: inline-block;
+    padding: 1.3em;
+    text-decoration: none;
+    color: #616161;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    background-color: antiquewhite;
+    color: #000;
+}
+
+.block_navbar_menu {
+    justify-content: space-between;
+    display: flex;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.navbar__menu {
+    margin: auto 0;
+    font-size: 44px;
+    /* padding: 6px; */
+    width: 44px;
+    cursor: pointer;
+
+}
+
+.logo {
+    margin: auto 0;
+    padding-left: 5px;
+}
+
+/* JUMBOTRON */
 .hero {
     display: flex;
     align-items: center;
@@ -28,4 +114,115 @@ img {
     margin-top: 16px;
     font-size: 18px;
     font-weight: 300;
+}
+
+/* JUMBOTRON SECTION END */
+
+.latest {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center
+}
+
+.latest h1 {
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 50px
+}
+
+.list {
+    margin: 32px auto auto;
+    text-align: left;
+    display: grid;
+    grid-row-gap: 16px
+}
+
+.list_item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative
+}
+
+.content {
+    padding: 32px
+}
+
+/* //card */
+.posts {
+    display: grid;
+    grid-row-gap: 16px;
+    margin: 32px auto auto;
+    text-align: left;
+}
+
+
+
+.post-item {
+    margin: 16px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.post-item__content {
+    padding: 16px 32px 32px 32px;
+}
+
+.post-item__thumbnail {
+    width: 100%;
+    height: 250px;
+}
+
+.post-item__date {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.post-item__date__author {
+    color: red;
+    text-decoration: none;
+}
+
+.post-item__title {
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 16px;
+    transition: 0.3s opacity;
+}
+
+.post-item__title:hover {
+    opacity: 0.5;
+}
+
+.post-item__title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-item__description {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+/* Footer */
+footer {
+    border-top: 2px solid black;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: antiquewhite;
+    color: white;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: large;
+    color: black;
+    padding: 12px;
 }

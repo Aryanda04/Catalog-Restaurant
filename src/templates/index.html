@@ -5,18 +5,38 @@
     <title>Restaurant Apps Starter Project</title>
 </head>
 <body>
-    <div class="hero" style="background-image: linear-gradient(rgba(0, 0, 5, .5), rgba(0, 0, 5, .5)), url('images/heros/hero-image_2.jpg');">
-        <div class="hero__inner">
-            <h1 class="hero__title">Laper Apps</h1>
-            <p class="hero__tagline">Find the best restaurants only on the best websites.</p>
+    <header>
+
+        <nav id="drawer" class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#">Home</a></li>
+                <li class="nav__item"><a href="#">Favorite</a></li>
+                <li class="nav__item"><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        
+        <div class="block_navbar_menu">
+            <a id="menu" class="navbar__menu">☰</a>
+            <h1 class="logo">LOGO</h1>
         </div>
-    </div>
-<h1>Restaurant Apps Starter Project</h1>
-<p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-<p>Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros sebagai background hero elemen</p>
-<img src="./images/heros/hero-image_1.jpg" width="450" alt="">
-<img src="./images/heros/hero-image_2.jpg" width="450" alt="">
-<img src="./images/heros/hero-image_3.jpg" width="450" alt="">
-<img src="./images/heros/hero-image_4.jpg" width="450" alt="">
+        <div class="hero" style="background-image: linear-gradient(rgba(0, 0, 5, .5), rgba(0, 0, 5, .5)), url('images/heros/hero-image_2.jpg');">
+            
+            <div class="hero__inner">
+                <h1 class="hero__title">FYS, For Your Stomach</h1>
+                <p class="hero__tagline">Find the Best Place to fill up your stomach</p>
+            </div>
+        </div>
+        <section class="content">
+            <div class="latest">
+                <h1 class="latest__label">Explore Restaurant</h1>
+                <div class="posts" id="restaurant-card"></div>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <h4 class="footer-text">Copyright &#169 2022 - For Your Stomach</h4>
+    </footer>
 </body>
 </html>
