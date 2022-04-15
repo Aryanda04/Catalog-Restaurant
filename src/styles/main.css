@@ -37,21 +37,31 @@ img {
     top: 0;
 }
 
+
+
+
 /* Navbar */
 
 
 .nav {
+    display: flex;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    flex-direction: row;
+    justify-content: space-between;
+
     text-align: center;
     position: sticky;
 }
 
 .nav__list {
+    /* float: right; */
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
+
+    list-style-type: none;
     padding: 0;
-    margin: 0;
+    overflow: hidden;
 }
 
 .nav__item {
@@ -68,6 +78,7 @@ img {
 }
 
 .nav a {
+
     width: 100%;
     display: inline-block;
     padding: 1.3em;
@@ -83,12 +94,15 @@ img {
 
 .block_navbar_menu {
     justify-content: space-between;
+    height: 60px;
     display: flex;
     margin: 0 auto;
     padding: 5px;
 }
 
 .navbar__menu {
+    min-height: 44px;
+    min-width: 44px;
     margin: auto 0;
     font-size: 44px;
     /* padding: 6px; */
@@ -98,8 +112,9 @@ img {
 }
 
 .logo {
+    width: 100px;
     margin: auto 0;
-    padding: 5px;
+    padding-right: -16px;
 }
 
 /* JUMBOTRON */
@@ -121,13 +136,13 @@ img {
 .hero__title {
     color: #fff;
     font-weight: 500;
-    font-size: 36px;
+    font-size: 50px;
 }
 
 .hero__tagline {
     color: #fff;
     margin-top: 16px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
 }
 
@@ -140,10 +155,16 @@ img {
     text-align: center
 }
 
+.latest__label {
+    font-size: 30px;
+    font-weight: 500;
+}
+
 
 
 .content {
-    padding: 32px
+    padding: 32px;
+    margin: 32 auto;
 }
 
 /* //card */
@@ -174,6 +195,10 @@ img {
 }
 
 .post-item__city {
+    border-radius: 5px 0 5px 0;
+    position: absolute;
+    background-color: antiquewhite;
+    padding: 12px;
     font-size: 15px;
     text-transform: uppercase;
     color: black;
@@ -209,7 +234,7 @@ img {
 
 /* Footer */
 footer {
-    border-top: 2px solid black;
+    border-top: 1px solid black;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -222,4 +247,5 @@ footer {
     font-size: large;
     color: black;
     padding: 12px;
+    margin: auto;
 }
