@@ -1,54 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Your Stomach</title>
-</head>
-<body>
-    <a href="#maincontent" class="skip-link">Menuju ke konten</a>
+  <head>
+    <title>Resto</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Katalog Restaurant" />
+    <meta name="keywords" content="Rifandani Resto" />
+    <meta name="theme-color" content="#ff8303" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/192x192.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css"
+    />
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+  </head>
+
+  <body>
+    <!-- skip-link -->
+    <a href="#main-content" class="skip-link">Menuju ke konten</a>
+
+    <!-- header -->
     <header>
-        <div class="block_navbar_menu">
-            <button href="#" id="menu" class="navbar__menu">☰</button>
-            <img class="logo" src="/images/logo/fys-1-removebg-preview.png" alt="fys-1 logo" >
-        </div>
+      <!-- nav-bar comp -->
+      <nav-bar></nav-bar>
 
-        <nav id="drawer" class="nav">
-            <img class="logo" src="/images/logo/fys-1-removebg-preview.png" alt="fys-1 logo" > 
-
-
-            <ul class="nav__list">
-
-
-                <li class="nav__item"><a href="#">Home</a></li>
-                
-                <li   class="nav__item"><a href="#">Favorite</a></li>
-                <li  class="nav__item"><a target="_blank" rel="noreferrer" href="https://aryanda04.github.io/portfolio/">About Us</a></li>
-            </ul>
-        </nav>
-        
-        
-       
-        <div class="hero" style="background-image: linear-gradient(rgba(0, 0, 5, .5), rgba(0, 0, 5, .5)), url('images/heros/hero-image_2.jpg');">
-            
-            <div class="hero__inner">
-                <h1 class="hero__title">FYS, For Your Stomach</h1>
-                <p class="hero__tagline">Find the Best Place to fill up your stomach</p>
-            </div>
-        </div>
+      <!-- hero-content comp -->
+      <hero-content class="hero__text"></hero-content>
     </header>
-        <main>
-        <section id="maincontent" class="content">
-            <div class="latest">
-                <h1 class="latest__label">Explore Restaurant</h1>
-                <div class="posts" id="restaurant-card"></div>
-            </div>
-        </section>
-    </main>
-        <footer>
-            <p class="footer-text">Copyright &#169 2022 - For Your Stomach</p>
-        </footer>
-   
-        
-    </body>
+
+    <!-- main content -->
+    <main id="main-content"></main>
+
+    <!-- custom-footer comp -->
+    <custom-footer></custom-footer>
+  </body>
 </html>
