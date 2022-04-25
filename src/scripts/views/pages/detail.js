@@ -42,7 +42,6 @@ const Detail = {
     `;
   },
 
-  // Fungsi ini akan dipanggil setelah render()
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
 
@@ -50,28 +49,23 @@ const Detail = {
     const mainContainer = document.querySelector('#main-container');
     const detailContainer = document.querySelector('#detail-resto');
 
-    // change main display to spinner
     mainContainer.style.display = 'none';
     loading.innerHTML = Spinner();
 
     try {
       const data = await RestaurantSource.getRestaurantDetail(url.id);
 
-      // use the detail data
-      console.info(data);
+      // console.info(data);
       detailContainer.innerHTML += restoDetail(data.restaurant);
 
-      // init like button
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         data,
       });
 
-      // change spinner display to main
       mainContainer.style.display = 'block';
       loading.style.display = 'none';
 
-      // review form
       const btnSubmitReview = document.querySelector('#submit-review');
       const nameInput = document.querySelector('#name-input');
       const reviewInput = document.querySelector('#review-input');
@@ -79,16 +73,13 @@ const Detail = {
       btnSubmitReview.addEventListener('click', async (e) => {
         e.preventDefault();
 
-        // POST review
         await PostReview(url, nameInput.value, reviewInput.value);
 
-        // Send message to websocket server
         sendDataToWebsocket({
           name: nameInput.value,
           review: reviewInput.value,
         });
 
-        // clear form input
         nameInput.value = '';
         reviewInput.value = '';
       });

@@ -1,7 +1,7 @@
 {
-    "name": "Resto",
-    "short_name": "Resto",
-    "description": "Web application displaying list of awesome restaurants",
+    "name": "FYS",
+    "short_name": "FYS",
+    "description": "Web menampilkan rekomendasi restaurant",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",

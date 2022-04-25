@@ -27,7 +27,6 @@
 .detail h3 {
   font-size: 1.5em;
   padding: 1em 0 0 0;
-  background-color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -55,13 +54,6 @@
   color: black;
 }
 
-.detail-menu h4 {
-  font-weight: bold;
-  font-size: 1.37em;
-  padding: 1em;
-  color: var(--btn);
-  background-color: var(--primary-color);
-}
 
 .detail-food {
   display: flex;
@@ -107,9 +99,8 @@
   position: relative;
   display: block;
   padding: 0.6em;
-  color: var(--font-color);
+  color: black;
   text-decoration: none;
-  background-color: var(--primary-color);
 }
 
 .detail-rating .fa {

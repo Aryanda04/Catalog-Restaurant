@@ -1,4 +1,4 @@
-import WebsocketNotif from './websocket-notif';
+import NotificationHelper from './notification-helper';
 
 let socket = null;
 
@@ -12,19 +12,17 @@ const WebSocketInitiator = {
 
   _onMessageHandler(message) {
     console.log('websocket onmessage handler => ', message);
-
-    const reviewData = JSON.parse(message.data);
-
-    WebsocketNotif.sendNotification({
-      title: reviewData.name,
+    const restaurant = JSON.parse(message.data);
+    NotificationHelper.sendNotification({
+      title: `${restaurant.title} is open!`,
       options: {
-        body: reviewData.review,
-        icon: 'icons/192x192.png',
-        image: 'https://i.ibb.co/nBh3jrM/roompy-android-web.png',
-        vibrate: [200, 100, 200],
+        body: restaurant.review,
+        image: `${CONFIG.BASE_IMAGE_URL}`,
       },
     });
   },
+
+
 };
 
 const sendDataToWebsocket = (reviewData) => {

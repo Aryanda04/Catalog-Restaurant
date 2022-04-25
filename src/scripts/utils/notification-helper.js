@@ -1,15 +1,12 @@
-const WebsocketNotif = {
+const NotificationHelper = {
   sendNotification({title, options}) {
-    const isAvailable = this._checkAvailability();
-    const isPermitted = this._checkPermission();
-
-    if (!isAvailable) {
-      console.info('Notification not supported in this browser');
+    if (!this._checkAvailability()) {
+      console.log('Notification not supported in this browser');
       return;
     }
 
-    if (!isPermitted) {
-      console.info('User did not yet granted permission');
+    if (!this._checkPermission()) {
+      console.log('User did not yet granted permission');
       this._requestPermission();
       return;
     }
@@ -18,7 +15,7 @@ const WebsocketNotif = {
   },
 
   _checkAvailability() {
-    return Boolean('Notification' in window);
+    return !!('Notification' in window);
   },
 
   _checkPermission() {
@@ -29,11 +26,11 @@ const WebsocketNotif = {
     const status = await Notification.requestPermission();
 
     if (status === 'denied') {
-      console.error('Notification Denied');
+      console.log('Notification Denied');
     }
 
     if (status === 'default') {
-      console.warn('Permission closed');
+      console.log('Permission closed');
     }
   },
 
@@ -43,4 +40,4 @@ const WebsocketNotif = {
   },
 };
 
-export default WebsocketNotif;
+export default NotificationHelper;
