@@ -7,10 +7,7 @@ class CustomFooter extends HTMLElement {
   render() {
     this.innerHTML = `
       <footer tabindex="0">
-        <ul>
-          <li>Copyright © 2021 - Resto</li>
-          <li>Dicoding Submission 2</li>
-        </ul>
+      <p class="footer-text">Copyright &#169 2022 - For Your Stomach</p>
       </footer>
     `;
   }

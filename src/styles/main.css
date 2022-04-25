@@ -1,252 +1,96 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* main,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-} */
+/*
+ * main
+ */
 
 main {
-  font-family: "Roboto", sans-serif;
-  color: #424242;
-  margin: auto;
-  padding: 32px;
-
-}
-
-img {
-  display: block;
-}
-
-/* SKIP LINK */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background-color: #bf1722;
-  color: white;
-  padding: 8px;
-  z-index: 100;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
-
-
-
-/* Navbar */
-
-
-.nav {
-  display: flex;
   width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-
-  text-align: center;
-  position: sticky;
-}
-
-.nav__list {
-  /* float: right; */
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-
-  list-style-type: none;
-  padding: 0;
-  overflow: hidden;
-}
-
-.nav__item {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 24%;
-  text-align: center;
-  line-height: 24px;
-  text-transform: uppercase;
-}
-
-.nav__item:hover {
-  background-color: antiquewhite;
-}
-
-.nav a {
-
-  width: 100%;
-  display: inline-block;
-  padding: 1.3em;
-  text-decoration: none;
-  color: #616161;
-}
-
-.nav a:hover {
-  text-decoration: underline;
-  background-color: antiquewhite;
-  color: #000;
-}
-
-.block_navbar_menu {
-  justify-content: space-between;
-  height: 60px;
-  display: flex;
   margin: 0 auto;
 }
 
-.navbar__menu {
-  background: transparent;
-  border: none;
-  display: inline-block;
-  margin: 6px;
-  min-height: 44px;
-  min-width: 44px;
-  margin: auto 0;
-  font-size: 44px;
-  width: 44px;
-  cursor: pointer;
-
+.container {
+  margin: 2em 10%;
+  padding: 1em;
 }
 
-.logo {
-  width: 100px;
-  margin: auto 0;
-  padding-right: -16px;
-}
-
-/* JUMBOTRON */
-.hero {
-  display: flex;
-  align-items: center;
-  min-height: 380px;
-  width: 100%;
+.main-content__title {
   text-align: center;
-  background-position: center;
-  background-color: green;
+  margin-bottom: 0.5em;
 }
 
-.hero__inner {
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-.hero__title {
-  color: #fff;
-  font-weight: 500;
-  font-size: 50px;
-}
-
-.hero__tagline {
-  color: #fff;
-  margin-top: 16px;
-  font-size: 20px;
-  font-weight: 300;
-}
-
-/* JUMBOTRON SECTION END */
-
-.latest {
-  width: 100%;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  text-align: center
-}
-
-.latest__label {
-  font-size: 30px;
-  font-weight: 500;
-}
-
-
-
-
-
-/* //card */
-.posts {
+#explore-restaurant {
   display: grid;
-  grid-row-gap: 16px;
-  margin: 32px auto auto;
-  text-align: left;
+  grid-row-gap: 1.5em;
+  padding-top: 1.5em;
 }
 
+/*
+ * Cards
+ */
 
-
-.post-item {
-  margin: 16px 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.card {
   width: 100%;
-  border-radius: 5px;
-  overflow: hidden;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: var(--primary-color);
 }
 
-.post-item__content {
-  padding: 16px 32px 32px 32px;
+.card:hover {
+  box-shadow: 10px 10px 5px 0 var(--secondary-color);
 }
 
-.post-item__thumbnail {
-  width: 100%;
-  height: 250px;
+.card-a-tag {
+  text-decoration: none;
+  color: var(--font-color);
 }
 
-.post-item__city {
-  border-radius: 5px 0 5px 0;
+.card-rating {
   position: absolute;
-  background-color: antiquewhite;
-  padding: 12px;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: black;
-}
-
-.post-item__rating {
-  color: black;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.post-item__title {
-  font-weight: 500;
-  font-size: 18px;
-  margin-top: 16px;
-  transition: 0.3s opacity;
-}
-
-.post-item__title:hover {
-  opacity: 0.5;
-}
-
-.post-item__title a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.post-item__description {
-  margin-top: 4px;
-  font-size: 14px;
-  line-height: 1.5em;
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid black;
+  top: 0;
   left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: antiquewhite;
   color: white;
+  font-size: large;
+  background-color: var(--btn);
+  padding: 0.4em 1.3em;
+  z-index: 1;
+}
+
+.card-rating .fa {
+  font-size: smaller;
+  padding: 0.3em 0.8em 0.3em 0;
+  color: yellow;
+}
+
+.img-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-height: 600px;
+}
+
+.card-image {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-content {
+  padding: 1.4em 2em;
+  font-size: small;
   text-align: center;
 }
 
-.footer-text {
-  font-size: large;
-  color: black;
-  padding: 12px;
-  margin: auto;
+.card-content-title {
+  font-weight: bold;
+  padding-bottom: 0.376em;
+  color: var(--btn);
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

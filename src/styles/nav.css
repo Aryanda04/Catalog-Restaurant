@@ -22,10 +22,11 @@
 .nav__item {
   box-sizing: border-box;
   display: inline-block;
-  width: 24%;
+  width: 100%;
   text-align: center;
   line-height: 24px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
 }
 
 .nav__item:hover {

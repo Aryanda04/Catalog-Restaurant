@@ -8,12 +8,12 @@ class Navbar extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="block_navbar_menu">
-    <button  id="menu" class="navbar__menu">☰</button>
-    <img class="logo" src="/images/logo/fys-1-removebg-preview.png" alt="fys-1 logo" >
+    <button href="#" id="menu" class="navbar__menu">☰</button>
+    <img class="logo" src="../images/fys-1-removebg-preview.png" alt="fys-1 logo" >
 </div>
 
-<nav id="drawer" classs="nav">
-    <img class="logo" src="/images/logo/fys-1-removebg-preview.png" alt="fys-1 logo" > 
+<nav id="drawer" class="nav">
+    <img class="logo" src="../images/fys-1-removebg-preview.png" alt="fys-1 logo" > 
 
 
     <ul class="nav__list">
@@ -21,7 +21,7 @@ class Navbar extends HTMLElement {
 
         <li class="nav__item"><a href="#">Home</a></li>
         
-        <li   class="nav__item"><a href="#/favorite">Favorite</a></li>
+        <li   class="nav__item"><a href="#">Favorite</a></li>
         <li  class="nav__item"><a target="_blank" rel="noreferrer" href="https://aryanda04.github.io/portfolio/">About Us</a></li>
     </ul>
 </nav>
