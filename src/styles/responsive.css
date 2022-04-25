@@ -48,7 +48,9 @@
 }
 
 @media screen and (min-width:500px) {
-  .posts {
+
+  #explore-restaurant,
+  #fav-resto {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
@@ -68,11 +70,19 @@
 
 
 @media screen and (min-width:650px) {
-  .posts {
+
+  #explore-restaurant,
+  #fav-resto {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 16px;
+  }
+
+  .detail-menu,
+  .detail {
+    grid-template-columns: 1fr;
+
   }
 
   .headline__content {
@@ -96,12 +106,21 @@
 
 
 @media screen and (min-width: 800px) {
-  .posts {
+
+  #explore-restaurant,
+  #fav-resto {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 16px;
   }
+
+  .detail-menu,
+  .detail {
+    grid-template-columns: 1fr 1fr;
+
+  }
+
 
   .nav__list {
     max-width: 800px;
@@ -109,21 +128,16 @@
 }
 
 @media screen and (min-width: 900px) {
-  .headline {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .posts {
+  #explore-restaurant,
+  #fav-resto {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  main {
-    padding: 64px;
-  }
+
 
   .hero {
     min-height: 380px;
@@ -131,7 +145,8 @@
 
   }
 
-  .posts {
+  #explore-restaurant,
+  #fav-resto {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }

@@ -1,0 +1,87 @@
+/*
+ * Cards
+ */
+.card {
+    margin: 16px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* .card:hover {
+    box-shadow: 10px 10px 5px 0 red;
+} */
+
+.card-a-tag {
+    text-decoration: none;
+}
+
+.card-rating {
+    border-radius: 5px 0 5px 0;
+    position: absolute;
+    background-color: antiquewhite;
+    /* padding: 12px; */
+    font-size: 15px;
+    text-transform: uppercase;
+    color: black;
+    left: 0;
+    font-size: large;
+    padding: 0.4em 1.3em;
+    z-index: 1;
+}
+
+.card-content .fa {
+    font-size: smaller;
+    padding: 0.3em 0.8em 0.3em 0;
+    color: yellow;
+}
+
+.img-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-height: 600px;
+}
+
+.card-image {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-content {
+    color: black;
+    padding: 1.4em 2em;
+    font-size: small;
+    text-align: left;
+}
+
+.card-content-rating {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.card-content-title {
+    font-weight: bold;
+    /* padding-bottom: 0.376em; */
+    font-size: 18px;
+    transition: 0.3s opacity;
+}
+
+.card-content-title:hover {
+    opacity: 0.5;
+
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

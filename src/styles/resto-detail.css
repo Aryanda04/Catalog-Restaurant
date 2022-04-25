@@ -1,9 +1,10 @@
 /* DETAIL */
 .detail {
   display: grid;
-  grid-gap: 1.545em;
+  grid-row-gap: 16px;
   font-size: 1em;
   margin-top: 1em;
+  color: black;
 }
 
 .detail-img {
@@ -15,6 +16,8 @@
 
 .detail-name-address-rating {
   display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .icon-primary {
@@ -37,11 +40,19 @@
 
 .category {
   padding: 0.3em 1em;
-  color: var(--primary-color);
-  background-color: var(--btn);
+  color: black;
+  background-color: antiquewhite;
   margin-right: 2px;
   border: 1px solid transparent;
   border-radius: 0px 10px 0px 10px;
+}
+
+.detail-menu {
+  display: grid;
+  grid-row-gap: 32px;
+  font-size: 1em;
+  margin-top: 1em;
+  color: black;
 }
 
 .detail-menu h4 {
@@ -55,7 +66,7 @@
 .detail-food {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   align-content: center;
 }
 
@@ -63,15 +74,15 @@
   padding: 0.5em 0;
   display: block;
   text-decoration: none;
-  background-color: var(--primary-color);
-  border: 0.5px solid var(--secondary-color);
+  background-color: white;
+  border: 0.5px solid black;
   border-width: 0 0 0.5px;
 }
 
 .detail-drink {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   align-content: center;
 }
 
@@ -79,8 +90,8 @@
   padding: 0.5em 0;
   display: block;
   text-decoration: none;
-  background-color: var(--primary-color);
-  border: 0.5px solid var(--secondary-color);
+  background-color: white;
+  border: 0.5px solid black;
   border-width: 0 0 0.5px;
 }
 
@@ -101,6 +112,26 @@
   background-color: var(--primary-color);
 }
 
+.detail-rating .fa {
+  font-size: smaller;
+  padding: 0.3em 0.8em 0.3em 0;
+  color: yellow;
+}
+
+/* SUMMARY */
+summary {
+  border: 1px solid transparent;
+  border-radius: 0px 10px 0px 10px;
+  padding-left: 12px;
+  cursor: pointer;
+  margin: 12px;
+  font-size: 32px;
+}
+
+summary:hover {
+  background-color: antiquewhite;
+}
+
 /* DETAIL REVIEW */
 .detail-review {
   max-width: 100%;
@@ -109,8 +140,10 @@
 }
 
 .detail-review-item {
-  color: var(--font-color);
-  background-color: var(--primary-color);
+  color: black;
+  border: 1px solid transparent;
+  border-radius: 0px 10px 0px 10px;
+  background-color: antiquewhite;
   margin-bottom: 1.5em;
   padding: 1em 1em;
 }
@@ -124,14 +157,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 1em 1em;
-  color: var(--btn);
-  border-bottom: 1px solid var(--font-color);
+  color: black;
+  border-bottom: 1px solid black;
 }
 
 .review-name {
   font-weight: bold;
   display: flex;
-  align-items: center;
 }
 
 .review-date {
@@ -144,19 +176,13 @@
   text-align: left;
 }
 
-.category:hover,
-.detail-food li:hover,
-.detail-drink li:hover,
-.detail-review-item:hover {
-  box-shadow: 0px 10px 13px -7px var(--secondary-color),
-    5px 5px 15px 5px var(--secondary-color);
-}
+
 
 /* FORM */
 form {
   margin: 2em 0;
   padding: 1.5em;
-  border: 3px dotted var(--btn-hover);
+  border: 3px solid black;
   border-radius: 0 15px 0 15px;
 }
 
@@ -167,16 +193,16 @@ form {
   padding: 0.3em;
   font-size: 1em;
   font-weight: normal;
-  color: var(--font-color);
+  color: black;
   background-color: #fff;
   appearance: none;
   outline: none;
   border: 1px solid transparent;
-  border-bottom: 1px solid var(--secondary-color);
+  border-bottom: 1px solid antiquewhite;
 }
 
 .form-control:hover {
-  border-bottom: 1px solid var(--btn);
+  border-bottom: 1px solid black;
 }
 
 .form-label {
@@ -192,10 +218,51 @@ form {
   margin-top: 0.5em;
 }
 
+/* CSS */
+.submit-btn {
+  align-items: center;
+  background-color: antiquewhite;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+}
+
+
+
 /* LIKE BUTOON */
 .like {
   font-size: 18px;
-  background-color: var(--btn);
+  background-color: red;
   color: white;
   border: 0;
   border-radius: 50%;
@@ -206,10 +273,10 @@ form {
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 16px;
   right: 16px;
+  z-index: 100;
 }
 
 .like:hover {
-  background-color: var(--btn-hover);
+  background-color: pink;
 }
