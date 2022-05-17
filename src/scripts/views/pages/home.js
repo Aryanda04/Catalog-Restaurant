@@ -1,9 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable new-cap */
-import Spinner from '../templates/spinner';
 import RestaurantSource from '../../data/resto-source';
-// import restoCard from '../templates/resto-card';
-import {createRestoItemTemplate} from '../templates/template-creator';
+import {createRestoItemTemplate, createLoader} from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -26,7 +24,7 @@ const Home = {
     const listContainer = document.querySelector('#explore-restaurant');
 
     mainContainer.style.display = 'none';
-    loading.innerHTML = Spinner();
+    loading.innerHTML = createLoader();
 
     try {
       const data = await RestaurantSource.getRestaurantList();

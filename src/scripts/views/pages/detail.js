@@ -1,12 +1,10 @@
 /* eslint-disable new-cap */
 /* eslint-disable max-len */
 import UrlParser from '../../routes/url-parser';
-import Spinner from '../templates/spinner';
 import RestaurantSource from '../../data/resto-source';
-import {createRestoDetailTemplate} from '../templates/template-creator';
+import {createRestoDetailTemplate, createLoader} from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import PostReview from '../../utils/post-review';
-import {sendDataToWebsocket} from '../../utils/websocket-initiator';
 
 const Detail = {
   async render() {
@@ -26,11 +24,10 @@ const Detail = {
     const mainContainer = document.querySelector('#main-container');
     const detailContainer = document.querySelector('#detail-resto');
     mainContainer.style.display = 'none';
-    loading.innerHTML = Spinner();
+    loading.innerHTML = createLoader();
 
     try {
       const data = await RestaurantSource.getRestaurantDetail(url.id);
-
       // console.info(data);
       detailContainer.innerHTML += createRestoDetailTemplate(data.restaurant);
       LikeButtonInitiator.init({
@@ -49,11 +46,6 @@ const Detail = {
         e.preventDefault();
 
         await PostReview(url, nameInput.value, reviewInput.value);
-
-        sendDataToWebsocket({
-          name: nameInput.value,
-          review: reviewInput.value,
-        });
 
         nameInput.value = '';
         reviewInput.value = '';

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import FavRestoIdb from '../data/resto-idb';
+import FavoriteRestoIdb from '../data/resto-idb';
 import {
   createLikeButtonTemplate,
   createLikedButtonTemplate,
@@ -18,7 +18,7 @@ const LikeButtonInitiator = {
     try {
       const {id} = this._restaurant;
 
-      const restaurant = await FavRestoIdb.getResto(id);
+      const restaurant = await FavoriteRestoIdb.getResto(id);
 
       if (restaurant) {
         this._renderLiked();
@@ -36,7 +36,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
 
     likeButton.addEventListener('click', async () => {
-      await FavRestoIdb.putResto(this._restaurant);
+      await FavoriteRestoIdb.putResto(this._restaurant);
       this._renderButton();
     });
   },
@@ -47,7 +47,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
 
     likeButton.addEventListener('click', async () => {
-      await FavRestoIdb.deleteResto(this._restaurant.id);
+      await FavoriteRestoIdb.deleteResto(this._restaurant.id);
       this._renderButton();
     });
   },

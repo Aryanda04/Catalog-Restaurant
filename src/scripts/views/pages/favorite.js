@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import FavRestoIdb from '../../data/resto-idb';
+import FavoriteRestoIdb from '../../data/resto-idb';
 // import restoCard from '../templates/resto-card';
 import {createRestoItemTemplate} from '../templates/template-creator';
 
@@ -16,7 +16,7 @@ const Favorite = {
   },
 
   async afterRender() {
-    const data = await FavRestoIdb.getAllResto();
+    const data = await FavoriteRestoIdb.getAllResto();
 
     const favRestoContainer = document.querySelector('#fav-resto');
 

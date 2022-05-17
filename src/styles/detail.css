@@ -17,11 +17,7 @@
 .detail-name-address-rating {
   display: inline-block;
   font-weight: bold;
-  font-size: 18px;
-}
-
-.icon-primary {
-  color: var(--btn);
+  font-size: 24px;
 }
 
 .detail h3 {
@@ -32,7 +28,7 @@
 
 .detail-desc {
   text-align: justify;
-  color: darkgrey;
+  color: black;
   margin-bottom: 0.5em;
   font-style: italic;
 }
@@ -104,7 +100,7 @@
 }
 
 .detail-rating .fa {
-  font-size: smaller;
+  font-size: large;
   padding: 0.3em 0.8em 0.3em 0;
   color: yellow;
 }
@@ -209,7 +205,7 @@ form {
   margin-top: 0.5em;
 }
 
-/* CSS */
+/* Submit Button */
 .submit-btn {
   align-items: center;
   background-color: antiquewhite;

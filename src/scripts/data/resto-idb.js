@@ -7,12 +7,11 @@ const openIdb = openDB(DB_NAME, DB_VERSION, {
   upgrade(db) {
     db.createObjectStore(OBJECT_STORE_NAME, {
       keyPath: 'id',
-      autoIncrement: true,
     });
   },
 });
 
-const FavRestoIdb = {
+const FavoriteRestoIdb = {
   async getResto(id) {
     return (await openIdb).get(OBJECT_STORE_NAME, id);
   },
@@ -30,4 +29,4 @@ const FavRestoIdb = {
   },
 };
 
-export default FavRestoIdb;
+export default FavoriteRestoIdb;
