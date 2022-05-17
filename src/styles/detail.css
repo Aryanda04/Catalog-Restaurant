@@ -168,6 +168,8 @@ summary:hover {
 /* FORM */
 form {
   margin: 2em 0;
+  min-height: 46px;
+
   padding: 1.5em;
   border: 3px solid black;
   border-radius: 0 15px 0 15px;
@@ -176,7 +178,7 @@ form {
 .form-control {
   display: block;
   width: 100%;
-  min-height: 1em;
+  min-height: 46px;
   padding: 0.3em;
   font-size: 1em;
   font-weight: normal;
@@ -196,8 +198,8 @@ form {
   padding-bottom: 10px;
   font-weight: bold;
   font-style: normal;
-  font-size: small;
-  color: var(--btn);
+  font-size: large;
+  color: black;
 }
 
 .mb-3 {
