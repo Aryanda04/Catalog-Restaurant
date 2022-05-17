@@ -3,8 +3,8 @@ import FavRestoIdb from '../data/resto-idb';
 import {
   createLikeButtonTemplate,
   createLikedButtonTemplate,
-} from '../views/templates/like-button';
-import {initSwalError, initSwalSuccess} from './swal-initiator';
+} from '../views/templates/template-creator';
+
 
 const LikeButtonInitiator = {
   async init({likeButtonContainer, data}) {
@@ -18,44 +18,36 @@ const LikeButtonInitiator = {
     try {
       const {id} = this._restaurant;
 
-      // get resto in indexed db
       const restaurant = await FavRestoIdb.getResto(id);
 
       if (restaurant) {
-        this._renderLikedButtonTemplate();
+        this._renderLiked();
       } else {
-        this._renderLikeButtonTemplate();
+        this._renderLike();
       }
     } catch (err) {
       console.error(err);
-      initSwalError(err.message);
-
-      throw new Error(err);
     }
   },
 
-  _renderLikeButtonTemplate() {
-    this._likeButtonContainer.innerHTML = createLikeButtonTemplate(); // append html
+  _renderLike() {
+    this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
 
     likeButton.addEventListener('click', async () => {
-      // onClick fav the selected resto
       await FavRestoIdb.putResto(this._restaurant);
-      initSwalSuccess('Resto favorited!');
       this._renderButton();
     });
   },
 
-  _renderLikedButtonTemplate() {
-    this._likeButtonContainer.innerHTML = createLikedButtonTemplate(); // append html
+  _renderLiked() {
+    this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
 
     likeButton.addEventListener('click', async () => {
-      // onClick unfav the selected resto
       await FavRestoIdb.deleteResto(this._restaurant.id);
-      initSwalSuccess('Resto unfavorited!');
       this._renderButton();
     });
   },

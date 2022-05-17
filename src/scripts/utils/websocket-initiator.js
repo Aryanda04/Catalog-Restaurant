@@ -1,34 +1,30 @@
 import NotificationHelper from './notification-helper';
 
-let socket = null;
+const webSocket = null;
 
 const WebSocketInitiator = {
   init(url) {
-    socket = new WebSocket(url);
-    console.log('ws connected to => ', socket.url);
-
-    socket.onmessage = this._onMessageHandler;
+    webSocket = new WebSocket(url);
+    webSocket.onmessage = this._onMessageHandler;
   },
 
   _onMessageHandler(message) {
-    console.log('websocket onmessage handler => ', message);
-    const restaurant = JSON.parse(message.data);
+    const movie = JSON.parse(message.data);
     NotificationHelper.sendNotification({
-      title: `${restaurant.title} is open!`,
+      title: `${movie.title} is on cinema!`,
       options: {
-        body: restaurant.review,
-        image: `${CONFIG.BASE_IMAGE_URL}`,
+        body: movie.overview,
+        image: `${CONFIG.BASE_IMAGE_URL + movie.poster_path}`,
       },
     });
   },
-
-
 };
 
 const sendDataToWebsocket = (reviewData) => {
   const data = JSON.stringify(reviewData);
 
-  socket.send(data);
+  webSocket.send(data);
 };
 
+// export default WebSocketInitiator;
 export {WebSocketInitiator, sendDataToWebsocket};

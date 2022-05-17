@@ -3,10 +3,9 @@
 import UrlParser from '../../routes/url-parser';
 import Spinner from '../templates/spinner';
 import RestaurantSource from '../../data/resto-source';
-import restoDetail from '../templates/resto-detail';
+import {createRestoDetailTemplate} from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import PostReview from '../../utils/post-review';
-import {initSwalError} from '../../utils/swal-initiator';
 import {sendDataToWebsocket} from '../../utils/websocket-initiator';
 
 const Detail = {
@@ -14,33 +13,11 @@ const Detail = {
     return `
       <div class="container">
         <div id="loading"></div>
-
-        <div class="like" id="likeButtonContainer"></div>
-
-        <div id="main-container">
-          <h2 class="title-container">Resto Detail</h2>
-
+        <div id="main-container"> 
           <section id="detail-resto"></section>
-
-          <div class="form-review">
-            <form autocomplete="on">
-              <div class="mb-3">
-                <label for="name-input" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name-input" minlength="3" placeholder="Your name..." required>
-              </div>
-
-              <div class="mb-3">
-                <label for="review-input" class="form-label">Review</label>
-                <input type="text" class="form-control" id="review-input" minlength="3" placeholder="Your review..." required>
-              </div>
-
-              <button id="submit-review" type="submit" class="submit-btn">Submit Review</button>
-            </form>
-          </div>
-        </div>
-      </div>
     `;
   },
+
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
@@ -48,7 +25,6 @@ const Detail = {
     const loading = document.querySelector('#loading');
     const mainContainer = document.querySelector('#main-container');
     const detailContainer = document.querySelector('#detail-resto');
-
     mainContainer.style.display = 'none';
     loading.innerHTML = Spinner();
 
@@ -56,8 +32,7 @@ const Detail = {
       const data = await RestaurantSource.getRestaurantDetail(url.id);
 
       // console.info(data);
-      detailContainer.innerHTML += restoDetail(data.restaurant);
-
+      detailContainer.innerHTML += createRestoDetailTemplate(data.restaurant);
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         data,
@@ -89,7 +64,6 @@ const Detail = {
       mainContainer.style.display = 'block';
       loading.style.display = 'none';
       detailContainer.innerHTML = `Error: ${err.message}`;
-      initSwalError(err.message);
     }
   },
 };

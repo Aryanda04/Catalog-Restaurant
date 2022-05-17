@@ -1,5 +1,3 @@
-// see more
-// https://restaurant-api.dicoding.dev/
 
 const CONFIG = {
   KEY: '12345',

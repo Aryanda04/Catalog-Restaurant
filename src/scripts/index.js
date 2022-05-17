@@ -1,24 +1,15 @@
 import 'regenerator-runtime';
 // css
 import '../styles/main.css';
-import '../styles/nav.css';
-import '../styles/hero.css';
-import '../styles/home.css';
-import '../styles/footer.css';
-import '../styles/responsive.css';
-import '../styles/spinner.css';
-import '../styles/resto-card.css';
-import '../styles/resto-detail.css';
-import '../styles/favorite.css';
 // js
 import App from './views/App';
 import swRegister from './utils/sw-register';
 import {WebSocketInitiator} from './utils/websocket-initiator';
 import CONFIG from './global/config';
 // components
-import './component/navbar';
-import './component/hero';
-import './component/custom-footer';
+import './views/component/navbar';
+import './views/component/hero';
+import './views/component/custom-footer';
 
 // init App
 const app = new App({

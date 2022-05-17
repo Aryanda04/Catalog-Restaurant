@@ -2,8 +2,8 @@
 /* eslint-disable new-cap */
 import Spinner from '../templates/spinner';
 import RestaurantSource from '../../data/resto-source';
-import restoCard from '../templates/resto-card';
-import {initSwalError} from '../../utils/swal-initiator';
+// import restoCard from '../templates/resto-card';
+import {createRestoItemTemplate} from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -20,25 +20,21 @@ const Home = {
     `;
   },
 
-  // Fungsi ini akan dipanggil setelah render()
   async afterRender() {
     const loading = document.querySelector('#loading');
     const mainContainer = document.querySelector('#main-container');
     const listContainer = document.querySelector('#explore-restaurant');
 
-    // change main display to spinner
     mainContainer.style.display = 'none';
     loading.innerHTML = Spinner();
 
     try {
-      const data = await RestaurantSource.getRestaurantList(); // fetch restaurant list
+      const data = await RestaurantSource.getRestaurantList();
 
-      // loop restaurants data
       data.restaurants.forEach((restaurant) => {
-        listContainer.innerHTML += restoCard(restaurant);
+        listContainer.innerHTML += createRestoItemTemplate(restaurant);
       });
 
-      // change spinner display to main
       loading.style.display = 'none';
       mainContainer.style.display = 'block';
     } catch (err) {
@@ -47,7 +43,6 @@ const Home = {
       mainContainer.style.display = 'block';
       loading.style.display = 'none';
       listContainer.innerHTML = `Error: ${err.message}`;
-      initSwalError(err.message);
     }
   },
 };

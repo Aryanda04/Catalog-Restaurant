@@ -1,7 +1,14 @@
 /*
  *  root settings
 */
-
+@import url(nav.css);
+@import url(hero.css);
+@import url(footer.css);
+@import url(home.css);
+@import url(detail.css);
+@import url(favorite.css);
+@import url(resto-card.css);
+@import url(responsive.css);
 
 * {
   padding: 0;
