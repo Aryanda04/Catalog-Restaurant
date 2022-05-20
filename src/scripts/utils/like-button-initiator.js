@@ -1,33 +1,31 @@
 /* eslint-disable max-len */
-import FavoriteRestoIdb from '../data/resto-idb';
 import {
   createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createUnlikeButtonTemplate,
 } from '../views/templates/template-creator';
 
 
 const LikeButtonInitiator = {
-  async init({likeButtonContainer, data}) {
+  async init({likeButtonContainer, favoriteResto, restaurant}) {
     this._likeButtonContainer = likeButtonContainer;
-    this._restaurant = data.restaurant;
+    this._restaurant = restaurant;
+    this._favoriteResto = favoriteResto;
 
     await this._renderButton();
   },
 
   async _renderButton() {
-    try {
-      const {id} = this._restaurant;
-
-      const restaurant = await FavoriteRestoIdb.getResto(id);
-
-      if (restaurant) {
-        this._renderLiked();
-      } else {
-        this._renderLike();
-      }
-    } catch (err) {
-      console.error(err);
+    const {id} = this._restaurant;
+    if (await this._isRestoExist(id)) {
+      this._renderLiked();
+    } else {
+      this._renderLike();
     }
+  },
+
+  async _isRestoExist(id) {
+    const restaurant = await this._favoriteResto.getResto(id);
+    return !!restaurant;
   },
 
   _renderLike() {
@@ -36,18 +34,18 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
 
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.putResto(this._restaurant);
+      await this._favoriteResto.putResto(this._restaurant);
       this._renderButton();
     });
   },
 
   _renderLiked() {
-    this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
+    this._likeButtonContainer.innerHTML = createUnlikeButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
 
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.deleteResto(this._restaurant.id);
+      await this._favoriteResto.deleteResto(this._restaurant.id);
       this._renderButton();
     });
   },

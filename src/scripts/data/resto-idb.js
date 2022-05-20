@@ -13,6 +13,9 @@ const openIdb = openDB(DB_NAME, DB_VERSION, {
 
 const FavoriteRestoIdb = {
   async getResto(id) {
+    if (!id) {
+      return;
+    }
     return (await openIdb).get(OBJECT_STORE_NAME, id);
   },
 
@@ -21,6 +24,9 @@ const FavoriteRestoIdb = {
   },
 
   async putResto(resto) {
+    if (!resto.hasOwnProperty('id')) {
+      return;
+    }
     return (await openIdb).put(OBJECT_STORE_NAME, resto);
   },
 
