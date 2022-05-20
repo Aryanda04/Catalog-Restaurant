@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 const assert = require('assert');
 
 /* eslint-disable max-len */
