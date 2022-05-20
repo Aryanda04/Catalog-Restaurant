@@ -22,7 +22,8 @@ const Favorite = {
 
     if (data.length === 0) {
       favRestoContainer.innerHTML = `
-        Empty favorite Resto. Put one, by clicking heart button in the detail page.
+      <div class="empty-favorite-text">
+        Empty favorite Resto. Put one, by clicking heart button in the detail page.</div>
       `;
     }
 

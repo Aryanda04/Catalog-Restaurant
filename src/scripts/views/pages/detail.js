@@ -5,6 +5,7 @@ import RestaurantSource from '../../data/resto-source';
 import {createRestoDetailTemplate, createLoader} from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import PostReview from '../../utils/post-review';
+import FavoriteRestoIdb from '../../data/resto-idb';
 
 const Detail = {
   async render() {
@@ -12,6 +13,8 @@ const Detail = {
       <div class="container">
         <div id="loading"></div>
         <div id="main-container"> 
+        <div class="like" id="likeButtonContainer"></div>
+
           <section id="detail-resto"></section>
     `;
   },
@@ -28,11 +31,19 @@ const Detail = {
 
     try {
       const data = await RestaurantSource.getRestaurantDetail(url.id);
-      // console.info(data);
+      const {restaurant} = data;
       detailContainer.innerHTML += createRestoDetailTemplate(data.restaurant);
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
-        data,
+        favoriteResto: FavoriteRestoIdb,
+        restaurant: {
+          id: restaurant.id,
+          name: restaurant.name,
+          pictureId: restaurant.pictureId,
+          city: restaurant.city,
+          rating: restaurant.rating,
+          description: restaurant.description,
+        },
       });
 
       mainContainer.style.display = 'block';

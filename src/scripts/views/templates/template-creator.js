@@ -2,11 +2,12 @@
 /* eslint-disable max-len */
 import CONFIG from '../../global/config';
 
+
 const createRestoItemTemplate = (data) => `
     <div tabindex="0" class="card">
       <a href="#/resto/${data.id}" class="card-a-tag">
         <div class="img-container">
-          <img tabindex="0" class="card-image" alt="${data.name}" src="${
+          <img tabindex="0" class="lazyload card-image" alt="${data.name}" src="icons/fys-1.png" data-src="${
   CONFIG.BASE_IMAGE_URL + data.pictureId
 }"/>
           <span tabindex="0" class="card-rating">
@@ -26,7 +27,6 @@ const createRestoItemTemplate = (data) => `
   `;
 const createRestoDetailTemplate = (data) => `
   <div class="detail">
-  <div class="like" id="likeButtonContainer"></div>
 
     <div class="img-container">
         <img class="detail-img" alt="${data.name}" src="${

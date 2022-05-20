@@ -9,11 +9,11 @@ class Navbar extends HTMLElement {
     this.innerHTML = `
     <div class="block_navbar_menu">
     <button href="#" id="menu" class="navbar__menu">☰</button>
-    <img class="logo" src="../images/fys-1-removebg-preview.png" alt="fys-1 logo" >
+    <img class="logo" src="../icons/fys-1-removebg-preview.png" alt="fys-1 logo" >
 </div>
 
 <nav id="drawer" class="nav">
-    <img class="logo" src="../images/fys-1-removebg-preview.png" alt="fys-1 logo" > 
+    <img class="logo" src="../icons/fys-1-removebg-preview.png" alt="fys-1 logo" > 
 
 
     <ul class="nav__list">

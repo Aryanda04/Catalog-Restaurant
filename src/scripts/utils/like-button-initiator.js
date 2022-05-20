@@ -10,7 +10,7 @@ const LikeButtonInitiator = {
     this._likeButtonContainer = likeButtonContainer;
     this._restaurant = restaurant;
     this._favoriteResto = favoriteResto;
-
+    // console.log(this._restaurant);
     await this._renderButton();
   },
 
